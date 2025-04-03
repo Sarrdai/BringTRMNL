@@ -1,14 +1,23 @@
-<div class="flex flex--col gap--small" data-list-limit="true" 
-     data-list-max-height="340" 
-     data-list-hidden-count="true"
-     data-list-max-columns="3">
-  {% for item in collection %}
-  <div class="item">
-        <div class="meta"></div>
-        <div class="content">
-          <span class="title title--small">• {{item.title}}</span>
-          <span class="description">{{item.description}}</span>      
-        </div>
+<div class="layout layout--col layout--left layout--stretch">
+  <div class="flex flex--col gap--small" data-list-limit="true" 
+    data-list-max-height="340" 
+    data-list-hidden-count="true"
+    data-list-max-columns="4">
+    {% for item in collection %}
+    <div class="item">
+      <div class="meta">
+      </div>
+      <div class="content">
+        <span class="title title--small">{{item.title}}</span>
+        <span class="description">{{item.description}}</span>      
+      </div>
     </div>
-  {% endfor %}
+    {% endfor %}
+  </div>
+
 </div>
+<div class="title_bar">
+  <img class="image" src="https://cdn.prod.website-files.com/5fbe6548a005d56f0dd39a2e/5fc24a65f7e1555200865e1b_bring-logo.svg" />
+  <span class="title">Einkaufliste</span>
+</div>
+
