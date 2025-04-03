@@ -1,0 +1,14 @@
+<div class="flex flex--col gap--small" data-list-limit="true" 
+     data-list-max-height="340" 
+     data-list-hidden-count="true"
+     data-list-max-columns="3">
+  {% for item in collection %}
+  <div class="item">
+        <div class="meta"></div>
+        <div class="content">
+          <span class="title title--small">• {{item.title}}</span>
+          <span class="description">{{item.description}}</span>      
+        </div>
+    </div>
+  {% endfor %}
+</div>
