@@ -1,0 +1,8 @@
+asyncio
+aiohttp
+logging
+requests
+bring_api
+requests
+mashumaro
+orjson
