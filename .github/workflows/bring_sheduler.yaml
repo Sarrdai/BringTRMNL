@@ -33,4 +33,4 @@ jobs:
         BRING_PASSWORD: ${{ secrets.BRING_PASSWORD }}
         LIST_UUID: ${{ secrets.LIST_UUID }}
         WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
-      run: main.py
+      run: python main.py
