@@ -41,7 +41,7 @@ jobs:
         python main.py > private_logs/script_output.log 2>&1
         
     - name: Upload private logs
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: private-debug-logs
         path: private_logs/
