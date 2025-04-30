@@ -27,10 +27,22 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         
-    - name: Run script
+    - name: Run script with private logging
       env:
         BRING_EMAIL: ${{ secrets.BRING_EMAIL }}
         BRING_PASSWORD: ${{ secrets.BRING_PASSWORD }}
         LIST_UUID: ${{ secrets.LIST_UUID }}
         WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
-      run: python main.py
+      run: |
+        # Create a directory for private logs
+        mkdir -p private_logs
+        
+        # Run your script and capture stdout/stderr to a log file
+        python main.py > private_logs/script_output.log 2>&1
+        
+    - name: Upload private logs
+      uses: actions/upload-artifact@v3
+      with:
+        name: private-debug-logs
+        path: private_logs/
+        retention-days: 3  # Adjust based on your needs
